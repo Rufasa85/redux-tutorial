@@ -1,10 +1,12 @@
 import React,{useState} from 'react'
+import {usePlayerContext} from "../../utils/PlayerContext";
 
-export default function PlayerForm(props) {
+export default function PlayerForm() {
+    const {addPlayer} = usePlayerContext()
     const [newName, setNewName] = useState("")
     const handleSubmit = e=>{
         e.preventDefault();
-        props.addPlayer(newName);
+       addPlayer(newName);
         setNewName('')
     }
     return (
