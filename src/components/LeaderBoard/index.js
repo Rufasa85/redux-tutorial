@@ -1,8 +1,9 @@
 import React from 'react'
-import { usePlayerContext } from '../../utils/PlayerContext';
+import {useSelector} from "react-redux"
 
 export default function LeaderBoard() {
-    const {scores} = usePlayerContext()
+    const scores = useSelector(state => state.scores)
+
     return (
         <div>
             <h2>TopScores:</h2>
